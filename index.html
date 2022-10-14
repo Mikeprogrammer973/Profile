@@ -1,0 +1,168 @@
+<?php
+
+@$info = isset($_GET['info'])?$_GET['info']:"";
+
+?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofólio</title>
+    <link rel="stylesheet" href="res/bootstrap@5.0.0-alpha2.min.css">
+    <link rel="stylesheet" href="res/chartist.min.css">
+    <link rel="stylesheet" href="res/style.css">
+    <script src="./res/interaction.js"></script>
+<body>
+  <header>
+    <span hidden id="first_">My</span><span id="logo">&lt<&lt/&gt;>&gt;</span><span hidden id="second_">Space</span>
+  </header>
+   <span id="spinner" class="spinner-border"></span>
+  <main>
+   <section id="menu">
+     <nav id="home" class="item-menu">
+       Me 
+     </nav>
+     <nav id="orcar" class="item-menu">
+       Orçamento
+     </nav>
+     <nav id="pro" class="item-menu">
+       Projetos
+     </nav>
+     <nav id="contact" class="item-menu">
+       Contatos
+     </nav>
+   </section>
+   <section id="content">
+     <section class="form" id="f-home">
+       
+       <div id="i-pessoal">
+          <div class="logo_"><img style="width: 15vw;margin: 0px;border-right:3px solid gray;" src="images/pl2.png" alt="Pessoal"></div>
+          <article>
+            <img onclick="redirect('https://github.com/Mikeprogrammer973')" id="me" src="images/mike.png" alt="Mike"><br /><span onclick="redirect('https://github.com/Mikeprogrammer973')">Mike D. Pascal</span><br><span style="text-decoration: underline double;font-style: italic;color:lightgreen;text-decoration-color:darkgreen;">Front-End Dev</span><hr>
+            <p>
+              Front-End Developer Junior graduado em ciencias da computação com 2 anos de experiencia. Actualmente cursando Análise de Dados na Univali.
+            </p>
+          </article>
+       </div>
+       
+       <div id="skills">
+         
+         <div class="logo_"><img style="width: 15vw;margin: 0px;border-right:3px solid gray;" src="images/skl2.png" alt="Skills"></div>
+         <div style="padding-top: 20px;" class="wrap">
+         <img onclick="redirect('#')" src="images/html1.png" alt="HTML">
+         <img onclick="redirect('#')" src="images/css.png" alt="CSS">
+         <img onclick="redirect('#')" src="images/js1.png" alt="JS">
+         </div>
+         <div class="wrap">
+         <img onclick="redirect('#')" src="images/ajax1.png" alt="Ajax">
+         <img onclick="redirect('#')" src="images/php1.png" alt="PHP">
+         <img onclick="redirect('#')" src="images/msql2.png" alt="MYSQL">
+         </div>
+         <div class="wrap">
+         <img style="width: 100%;" onclick="redirect('#')" src="images/csharp.png" alt="C#">
+         </div>
+       </div>
+     </section>
+     <section class="form" id="f-orcar">
+       <form name="msg_com" action="./res/send_mail.php" method="post">
+         <p>
+           <label for="nome_cli">Nome Completo<strong>*</strong>:</label>
+           <input required type="text" name="nome_cli" id="nome_cli" placeholder="Nome Completo..." values="" />
+         </p>
+         <p>
+           <label for="email">E-mail (válido)<strong>*</strong>:</label>
+           <input required type="email" name="email" placeholder="Seu E-mail..." id="email" value="" />
+         </p>
+         <p>
+           <label for="cel">Celular (WhatsApp)<strong>*</strong>:</label>
+           <input required placeholder="Seu WhatsApp..." type="tel">
+         </p>
+         <p>
+           <label for="desc">Detalhes<strong>*</strong>:</label>
+           <input placeholder="PDF Desc..." name="desc-pdf" id="desc-pdf" type="file">
+           <textarea required placeholder="Detalhes do projeto..." name="desc-t" id="desc-t" cols="30" rows="10"></textarea>
+         </p>
+         <p>
+           <input style="margin: 0px;letter-spacing: 1px;" class="btn btn-success btn_" type="submit" name="sent_o" id="sent_o" value="Pedir Orçamento" />
+         </p>
+       </form>
+     </section>
+     <section class="form" id="f-pro">
+       <div class="container-pro">
+         <h1 onclick="redirect('#')" class="title-pro">Pronote</h1>
+         <img onclick="redirect('#')" src="images/pronote.jpg" alt="images/pronote.jpg">
+         <input onclick="redirect('#')" class="btn btn-info btn_" type="button" value="Visitar">
+       </div>
+       <div class="container-pro">
+         <h1 onclick="redirect('https://mikeprogrammer973.github.io/Jogo-da-Velha/')" class="title-pro">Hashgame</h1>
+         <img onclick="redirect('https://mikeprogrammer973.github.io/Jogo-da-Velha/')" src="images/hg.jpg" alt="icons/teste.gif">
+      <input onclick="redirect('https://mikeprogrammer973.github.io/Jogo-da-Velha/')" class="btn btn_ btn-info" type="button" value="Visitar">
+      <input onclick="redirect('https://github.com/Mikeprogrammer973/Jogo-da-Velha')" class="btn btn_ btn-info" type="button" value="Código">
+       </div>
+     </section>
+     <section class="form" id="f-contact">
+       <div class="wrap">
+       <img onclick="redirect('https://github.com/Mikeprogrammer973')" src="images/github.png" alt="Github">
+       <img onclick="redirect('https://www.linkedin.com/in/mike-pascal-280927247')" src="images/lk1.png" alt="LinkedIn">
+       </div>
+       <div class="wrap">
+       <img onclick="redirect('https://wa.me/526864631922')" src="images/zap1.png" alt="WhatsApp">
+       <img onclick="redirect('https://accounts.google.com/ServiceLogin?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F')" src="images/gmail.png" alt="Gmail">
+       </div>
+     </section>
+   </section>
+  </main>
+  <footer>
+    <section id="follow">
+      <div>
+      <img onclick="redirect('https://facebook.com/Mike Pascal')" class="follow-icon" src="images/fb2.png" alt="Facebook">
+      <img onclick="redirect('#')" class="follow-icon" src="images/insta1.png" alt="Instagram">
+      <img onclick="redirect('#')" class="follow-icon" src="images/twt1.png" alt="Twitter">
+      </div>
+      
+      <div class="space">
+       <img onclick="redirect('https://wa.me/526864631922')" class="follow-icon" src="images/zap1.png" alt="WhatsApp">
+      <img onclick="redirect('https://t.me/526864631922')" class="follow-icon" src="images/tg1.png" alt="Telegram">
+      <img onclick="redirect('https://accounts.google.com/ServiceLogin?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F')" class="follow-icon" src="images/gmail.png" alt="Gmail">
+      </div>
+      
+      <div class="space">
+       <img onclick="redirect('https://www.linkedin.com/in/mike-pascal-280927247')" class="follow-icon" src="images/lk1.png" alt="LinkedIn">
+      <img onclick="redirect('https://github.com/Mikeprogrammer973')" class="follow-icon" src="images/github.png" alt="Github">
+      <img onclick="redirect('#')" class="follow-icon" src="images/yt2.png" alt="Youtube Channel">
+      </div>
+    </section>
+    <section id="msg-form">
+      <form name="msg_simp" action="res/send_mail.php?tipo=sim" method="POST">
+        <input required type="email" name="from" id="from" placeholder="Seu E-mail..." style="height: 30px;margin: 0px;border-radius: 10px 10px 0px 0px;" value="" />
+        <textarea style="border-radius: 0px; margin:0px;" required name="msg" id="msg" rows="2" cols="40" placeholder="Sua mensagem..."></textarea>
+        <input class="btn btn_ btn-light" style="border-radius: 0px 0px 10px 10px;margin-top: 0px;color:teal;" type="submit" name="sent_msg" id="sent_msg" value="Enviar" />
+      </form>
+    </section>
+  </footer>
+  <p id="info_">Enviado com sucesso!</p>
+</body>
+</html>
+<script>
+var info = document.getElementById("info_")
+  if("<?php echo $info; ?>" != "")
+  {
+    //info.style.display="block";
+    info.innerHTML = "<?php echo $info! ?>";
+    setTimeout(()=>{
+      //location.replace("index.php");
+    },1000);
+  }
+  
+  function redirect(laco){
+    info.style.display = "block"
+    info.innerHTML = "Redirecting..."
+    document.getElementById("spinner").style.display="block"
+    setTimeout(()=>{
+      window.open(laco,"_blank")
+      document.getElementById("spinner").style.display="none"
+      info.style.display="none"
+    },2000)
+  }
+</script>
